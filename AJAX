@@ -1,0 +1,38 @@
+什么是ajax？ajax即asynchronous javascript and xml(异步javascript和xml)，它并不是一门新技术，
+而是由javascript css dom(文档对象模型)，xmlhttprequest混合实现的。
+ 
+XMLhttpRquest对象是AJAX中的核心对象，它是一个具有应用程序接口的JavaScript对象，能够使用超文本传输协议连接1个服务器，
+是微软在1999年IE5.0浏览器中率先提出的
+  使用XMLhttpRequest对象，AJAX可以象桌面应用程序一样，只同服务器进行数据层面的交互，
+  而不用每次都刷新页面，这样加快了服务器响应速度，缩短用户的等待时间
+ 
+open()
+  用于设置异步请求方法，URL
+send()
+  用于向服务器发送请求
+onreadystatechange()
+  每个状态改变都会触发这个事件
+ 
+readyState
+  请求的状态，0=初始化，1=正在加载，2=已加载，3=交互中，4=完成
+responseText
+  服务器响应字符串
+responseXML
+  服务器响应XML
+ 
+status
+  返回服务器的HTTP状态码
+  200=成功
+  202=请求被接受，但尚未成功
+  400=错误请求
+  404=文件未找到
+  500=内部服务器错误
+ 
+If(window.ActiveXObject){//判断是否为IE浏览器
+  xmlhttp = new ActiveXObject(“Microsoft.XMLHttp”)
+}else{
+  xmlhttp = new XMLHttpRequest();
+}
+ 
+•POST的设置
+•setRequestHeader("Content-type","application/x-www-form-urlencoded");
